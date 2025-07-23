@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://m3w4v40ma6dr"]
+
+[ext_resource type="Shader" uid="uid://bhv2rntudqd2g" path="res://addons/smart_planar_reflector/Internal/shader_planar_reflector.tres" id="1_syj4d"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_syj4d")
+shader_parameter/UV_scale = Vector2(1, 1)
+shader_parameter/UV_offset = Vector2(0, 0)
+shader_parameter/albedo = Color(0, 0, 0, 1)
+shader_parameter/distort_strength = 0.0
+shader_parameter/relfection_mix = 1.0
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 0.0
+shader_parameter/reflection_strength = 1.0
+shader_parameter/Emmission = 0.0
+shader_parameter/normal_strength = 1.0

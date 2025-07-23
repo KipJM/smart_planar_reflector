@@ -10,9 +10,8 @@ config_version=5
 
 [application]
 
-config/name="gd_planar_reflector"
+config/name="smart_planar_reflector"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
 
 [dotnet]
 
