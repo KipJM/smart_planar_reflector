@@ -16,3 +16,5 @@ data_*/
 mono_crash.*.json
 /addons/godot-git-plugin/
 /addons/godot_super-wakatime/
+
+.idea/
