@@ -1,5 +1,7 @@
 # Smart Planar Reflector
-A simple-to-use and performant 3D planar reflector that provides crystal-clear reflections in complex environments.
+![img](https://github.com/KipJM/smart_planar_reflector/blob/master/spr_banner.png?raw=true)
+
+A simple-to-use and performant 3D planar reflector Godot plugin that provides crystal-clear reflections in complex environments.
 
 ## Installation
 1. **Install "Smart Planar Reflector" through the Asset Library from the Godot Engine.**
