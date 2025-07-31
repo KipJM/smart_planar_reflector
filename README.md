@@ -9,6 +9,7 @@ A simple-to-use and performant 3D planar reflector Godot plugin that provides cr
 2. **enable the addon from Project -> Plugins.**
 
 ## Demo
+### **Watch the Video demo of this plugin here:** [YouTube](https://youtu.be/WUj3DIUBM0E)  
 A simple demo scene is in the DEMO folder that demonstrates the basic usage of this addon.  
 Please see [ACEDIA](https://kip.gay/acedia) ([source code](https://kip.gay/acedia/repo)) for a full, production-level demonstration of the capabilities of this addon.
 
