@@ -8,6 +8,10 @@ A simple-to-use and performant 3D planar reflector Godot plugin that provides cr
 1. (alterenative) Clone this repository and copy the addon/smart_planar_reflector folder into your project's addons folder
 2. **enable the addon from Project -> Plugins.**
 
+## Demo
+A simple demo scene is in the DEMO folder that demonstrates the basic usage of this addon.  
+Please see [ACEDIA](https://kip.gay/acedia) ([source code](https://kip.gay/acedia/repo)) for a full, production-level demonstration of the capabilities of this addon.
+
 ## Usage
 **THIS ADDON ONLY WORKS IN SPECIFIC CONFIGURATIONS. PLEASE READ BELOW ON HOW TO USE IT.**\
 1. Add a planar reflector to your scene by searching for `PlanarReflector` in the Add Node dialog. 
