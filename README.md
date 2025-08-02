@@ -4,8 +4,8 @@
 A simple-to-use and performant 3D planar reflector Godot plugin that provides crystal-clear reflections in complex environments.
 
 ## Installation
-1. **Install "Smart Planar Reflector" through the Asset Library from the Godot Engine.**
-1. (alterenative) Clone this repository and copy the addon/smart_planar_reflector folder into your project's addons folder
+1. **(RECOMMENDED) Install "Smart Planar Reflector" through the Asset Library from the Godot Engine.** [LINK](https://godotengine.org/asset-library/asset/4191)
+1. (alternative) OR: Clone this repository and copy the addon/smart_planar_reflector folder into your project's addons folder
 2. **enable the addon from Project -> Plugins.**
 
 ## Demo
