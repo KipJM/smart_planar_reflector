@@ -40,3 +40,6 @@ Smart Planar Reflector (SPR) works by using an additional camera (created at run
 This type of reflection, while very versatile, easy-to-setup, and very accurate, has a non-negligable performance cost to your game (render time, **VRAM allocation**).  
 SPR provides many systems to help you minimize this performance cost so that it would not _dramatically_ affect the performance of your game.  
 **As a general rule, try to make it so that the player would not have more than 2 planar reflectors in view at the same time.**
+
+## Donation
+### If you find this plugin useful, consider donating by **purchasing** my game on itch.io: [ACEDIA](https://kipachu.itch.io/ACEDIA)
