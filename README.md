@@ -17,7 +17,7 @@ Please see [ACEDIA](https://kip.gay/acedia) ([source code](https://kip.gay/acedi
 ### If you find this plugin useful, consider donating by **purchasing** my game on itch.io: [ACEDIA](https://kipachu.itch.io/ACEDIA)
 
 ## Usage
-**THIS ADDON ONLY WORKS IN SPECIFIC CONFIGURATIONS. PLEASE READ BELOW ON HOW TO USE IT.**\
+**THIS ADDON ONLY WORKS IN SPECIFIC CONFIGURATIONS. PLEASE READ BELOW ON HOW TO USE IT.**
 1. Add a planar reflector to your scene by searching for `PlanarReflector` in the Add Node dialog. 
 2. Assign a Godot quad primitive to the mesh section of your planar reflector. Then, in the properties of that quad, change the size to how large you want your reflection surface to be.
 3. Create a material using the provided reflection shader in the Internal/ folder. This shader is a VisualShader. Feel free to tweak it to fit your project.
@@ -45,6 +45,11 @@ SPR provides many systems to help you minimize this performance cost so that it 
 **As a general rule, try to make it so that the player would not have more than 2 planar reflectors in view at the same time.**
 
 ## Algorithm
+
+![Algorithm Demonstration](https://github.com/KipJM/smart_planar_reflector/blob/master/spr_algo_demo.webp?raw=true)[^note]
+
+[^note]: Algorithm demonstration. The green frustum shows the near clipping plane of the reflector camera. This is a big Webp file (20sec long) so it may lag on your browser when played for the first time.
+
 For the specifics, please view the code. The rough explanation on what the dynamic near plane algorithm does is as follows:
 
 Let the reflection surface be a quad named `R`, the near plane be a quad named `N`. In SPR, These quads will be planar rectangles in 3D space.
