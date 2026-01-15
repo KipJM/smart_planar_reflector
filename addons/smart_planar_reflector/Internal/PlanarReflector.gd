@@ -196,11 +196,21 @@ func update_reflect_cam() -> bool:
 	# plane points (arghh I don't even) 
 	var point_bl = bottom_plane.intersects_segment(mesh_bl, mesh_tl)
 	var point_br = bottom_plane.intersects_segment(mesh_br, mesh_tr)
+	var point_bb = bottom_plane.intersects_segment(mesh_bl, mesh_br) # New: solve edge case
+	var point_bt = bottom_plane.intersects_segment(mesh_tl, mesh_tr) # New: solve edge case
+	
 	var point_tl = top_plane.intersects_segment(mesh_bl, mesh_tl)
 	var point_tr = top_plane.intersects_segment(mesh_br, mesh_tr)
+	var point_tb = top_plane.intersects_segment(mesh_bl, mesh_br) # New: solve edge case
+	var point_tt = top_plane.intersects_segment(mesh_tl, mesh_tr) # New: solve edge case
 	
+	var point_ll = left_plane.intersects_segment(mesh_bl, mesh_tl) # New: solve edge case
+	var point_lr = left_plane.intersects_segment(mesh_br, mesh_tr) # New: solve edge case
 	var point_lb = left_plane.intersects_segment(mesh_bl, mesh_br)
 	var point_lt = left_plane.intersects_segment(mesh_tl, mesh_tr)
+	
+	var point_rl = right_plane.intersects_segment(mesh_bl, mesh_tl) # New: solve edge case
+	var point_rr = right_plane.intersects_segment(mesh_br, mesh_tr) # New: solve edge case
 	var point_rb = right_plane.intersects_segment(mesh_bl, mesh_br)
 	var point_rt = right_plane.intersects_segment(mesh_tl, mesh_tr)
 	
@@ -234,8 +244,11 @@ func update_reflect_cam() -> bool:
 	
 	var point_vectors: Array[Vector3];
 
-	var point_list = [point_bl, point_br, point_tl, point_tr, point_lb, point_lt, point_rb, point_rt, 
-		mesh_bl, mesh_br, mesh_tl, mesh_tr]
+	var point_list = [point_bl, point_br, point_bb, point_bt,
+						point_tl, point_tr, point_tb, point_tt,
+						point_ll, point_lr, point_lb, point_lt,
+						point_rl, point_rr, point_rb, point_rt, 
+						mesh_bl, mesh_br, mesh_tl, mesh_tr]
 	for i in len(point_list):
 		var point = point_list[i]
 		if !point:
@@ -255,9 +268,11 @@ func update_reflect_cam() -> bool:
 		
 		#if debug_enabled:
 			#DebugDraw3D.draw_text(point - Vector3.FORWARD * 0.1, [
-				#"point_bl", "point_br", "point_tl", "point_tr", "point_lb", "point_lt", "point_rb", "point_rt", 
-				#"mesh_bl", "mesh_br", "mesh_tl", "mesh_tr", 
-				#"corner_bl", "corner_br", "corner_tl", "corner_tr"][i])
+			#					"point_bl", "point_br", "point_bb", "point_bt",
+			#					"point_tl", "point_tr", "point_tb", "point_tt",
+			#					"point_ll", "point_lr", "point_lb", "point_lt",
+			#					"point_rl", "point_rr", "point_rb", "point_rt", 
+			#					"mesh_bl", "mesh_br", "mesh_tl", "mesh_tr"][i])
 		# DEBUG End
 	
 	
@@ -286,7 +301,7 @@ func update_reflect_cam() -> bool:
 		return false# not in view
 	
 	# Find shortest near plane that doesn't remove any content
-	point_vectors.sort_custom(func(a: Vector3, b: Vector3): return -a.z < -b.z)
+	point_vectors.sort_custom(func(a: Vector3, b: Vector3): return -a.z < -b.z && a.z < 0)
 	var target_vector = point_vectors[0]
 	
 	# DEBUG Start: DebugDraw3D required.
