@@ -59,6 +59,8 @@ Let the reflection surface be a quad named `R`, the near plane be a quad named `
 
 The dynamic near plane system aims to maximize the near plane distance while making sure `R` is always in front of / touching `N`. This may seem simple as first, but remember that both `N` and `R` are bounded, and not infinite planes. This introduces a lot of edge cases *(such as `N`'s surface touching a corner of `R`)*.
 
-SPR solves this by using a collection of test points (vertices of quads, plane intersection points, edges, etc.). SPR finds the max near plane distance where at least a certain number of specific test points passes SPR's obstruction test. Different points have different criterias to pass its test, and not all points are considered equally. For the specifics, please check the code ~~(also because I can't really remember I wrote the algorithm at like 3AM ;-;)~~
+SPR solves this by using a collection of test points (vertices of quads, frustum plane corner & reflection intersecitons, edges, etc. basically all intersections of the camera frustum planes with itself and the bounded reflection surface). For each point SPR tests if it is in the camera's view or on the reflection surface. From these "valid" points, the point with the shortest distance to the camera is picked, then its distance is used for the near plane distance.
+
+In other words, SPR ensures the clipping plane will be 100% behind the volume extended infinitely out of the reflection surface. This is achieved by ensuring all the key points on the reflection surface not be clipped out. The near plane is then set to accomodate all of these key points.
 
 This algorithm can find the most optimal ("maximum") near plane distance in every circumstance, for every possible combination of position, rotation or scale of `R` and `N`.
